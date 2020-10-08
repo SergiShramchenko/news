@@ -1,0 +1,25 @@
+/* HEADER */
+
+.header {
+  display: flex;
+  margin: 10px 0 20px 0;
+  /* border: solid 2px cadetblue; */
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  margin-left: 50px;
+}
+
+.header-logo__title {
+  margin: 10px 0px 10px 20px;
+  font-size: 24px;
+  letter-spacing: 0.3px;
+}
+
+.header-logo__img {
+  width: 54px;
+}
+
+/* // HEADER */

@@ -1,0 +1,20 @@
+.container {
+  /* border: solid 2px blue; */
+  width: 95%;
+  margin: 0 auto;
+}
+
+/* NEWS */
+
+.news {
+  /* border: solid 5px tomato; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.news-content {
+  /* border: solid 2px black; */
+  display: flex;
+}
+/* // NEWS */
