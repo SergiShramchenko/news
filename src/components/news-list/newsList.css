@@ -1,25 +1,3 @@
 .news-list {
   list-style: none;
-  width: 55%;
-  /* border: solid 2px black; */
-  margin-left: 50px;
-  /* min-width: 360px; */
-}
-.news-list__item {
-  margin: 20px 5px;
-  font-size: 14px;
-  /* border: solid 2px teal; */
-  /* padding: 20px 0; */
-}
-
-.news-list__item__link {
-  text-decoration: none;
-  color: rgb(0, 0, 0);
-  font-weight: 500;
-  /* border: solid 2px teal; */
-  /* padding: 20px 0; */
-}
-
-.news-list__item__link:hover {
-  color: rgb(43, 67, 206);
 }

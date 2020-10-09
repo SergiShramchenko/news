@@ -1,11 +1,18 @@
-import { FETCH_NEWS, GET_NEWS } from './types';
+import { types } from './types';
 
 export const newsActions = {
-  fetchNews: () => ({
-    type: FETCH_NEWS,
+  startFetchNews: () => ({
+    type: types.START_FETCH_NEWS,
   }),
-  getNews: (data) => ({
-    type: GET_NEWS,
+  stopFetchNews: () => ({
+    type: types.STOP_FETCH_NEWS,
+  }),
+  catchError: (error) => ({
+    type: types.CATCH_ERROR,
+    error,
+  }),
+  getNewsArticles: (data) => ({
+    type: types.GET_NEWS_ARTICLES,
     payload: data,
   }),
 };

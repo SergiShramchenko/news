@@ -1,15 +1,13 @@
-/* HEADER */
-
 .header {
-  display: flex;
-  margin: 10px 0 20px 0;
-  /* border: solid 2px cadetblue; */
+  width: 95%;
+  margin: 0 auto;
+  padding: 10px 0 20px 0;
 }
 
 .header-logo {
+  width: fit-content;
   display: flex;
   align-items: center;
-  margin-left: 50px;
 }
 
 .header-logo__title {
@@ -21,5 +19,3 @@
 .header-logo__img {
   width: 54px;
 }
-
-/* // HEADER */

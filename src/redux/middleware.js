@@ -1,4 +1,3 @@
-// Core
 import { compose } from 'redux';
 import { createLogger } from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';

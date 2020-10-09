@@ -1,9 +1,11 @@
 import React from 'react';
 
+import './newsItem.css';
+
 export default ({ article: { url, title } }) => (
-  <li className='news-list__item'>
+  <li className='news-item'>
     <a
-      className='news-list__item__link'
+      className='news-item__link'
       rel='noopener noreferrer'
       href={url}
       target='_blank'

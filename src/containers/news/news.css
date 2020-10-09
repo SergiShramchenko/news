@@ -1,20 +1,10 @@
-.container {
-  /* border: solid 2px blue; */
+.news {
   width: 95%;
   margin: 0 auto;
 }
 
-/* NEWS */
-
-.news {
-  /* border: solid 5px tomato; */
+.news-content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
 }
-
-.news-content {
-  /* border: solid 2px black; */
-  display: flex;
-}
-/* // NEWS */
