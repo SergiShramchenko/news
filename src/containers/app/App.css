@@ -1,3 +1,5 @@
 .App {
   /* border: solid 2px tomato; */
+  height: 100vh;
+  overflow-y: scroll;
 }
