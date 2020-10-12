@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './newsItem.css';
 
-export default ({ article: { url, title } }) => (
+const NewsItem = ({ url, title }) => (
   <li className='news-item'>
     <a
       className='news-item__link'
@@ -14,3 +15,10 @@ export default ({ article: { url, title } }) => (
     </a>
   </li>
 );
+
+NewsItem.propTypes = {
+  url: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+};
+
+export default NewsItem;

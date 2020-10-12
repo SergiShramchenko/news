@@ -1,14 +1,32 @@
 import React from 'react';
 
-import newsLogo from '../../assets/svg/logo/news.svg';
+import useThemeMode from '../../custom-hooks/useThemeMode';
+import useFetchQuery from '../../custom-hooks/useFetchQuery';
+
+import Logotype from '../../components/logotype';
+import SearchInput from '../../components/search-input';
+import ThemeSwitcher from '../../components/theme-swithcher';
 
 import './header.css';
 
-export default () => (
-  <header className='header'>
-    <div className='header-logo' tabIndex='0'>
-      <img className='header-logo__img' src={newsLogo} alt='news' />
-      <h1 className='header-logo__title'>NEWS</h1>
-    </div>
-  </header>
-);
+export default () => {
+  const { changeThemeMode, themeMode } = useThemeMode();
+  const { getInputValue, fetchQuery, searchQuery } = useFetchQuery();
+
+  return (
+    <header className='header'>
+      <Logotype />
+      <div className='header-options'>
+        <SearchInput
+          getInputValue={getInputValue}
+          fetchQuery={fetchQuery}
+          searchQuery={searchQuery}
+        />
+        <ThemeSwitcher
+          changeThemeMode={changeThemeMode}
+          themeMode={themeMode}
+        />
+      </div>
+    </header>
+  );
+};

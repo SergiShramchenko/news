@@ -1,21 +1,30 @@
 import React from 'react';
 
 import useFetchNews from '../../custom-hooks/useFetchNews';
+import useNewsCategory from '../../custom-hooks/useNewsCategory';
 
 import NewsList from '../../components/news-list';
-import NewsOptions from '../../components/news-options';
+import NewsCategory from '../../components/news-category';
+import Spinner from '../../components/spinner';
 
 import './news.css';
 
-export default () => {
-  const { news, category } = useFetchNews();
+const News = () => {
+  const { news, category, selectedСategory, loading } = useFetchNews();
+  const { changeCategory } = useNewsCategory();
 
   return (
     <div className='news'>
       <div className='news-content'>
-        <NewsOptions category={category} />
-        <NewsList news={news} />
+        <NewsCategory
+          category={category}
+          selectedСategory={selectedСategory}
+          changeCategory={changeCategory}
+        />
+        {loading ? <Spinner /> : <NewsList news={news} />}
       </div>
     </div>
   );
 };
+
+export default News;

@@ -1,11 +1,11 @@
 import { all, put } from 'redux-saga/effects';
 
-import { fetchNews } from './news/saga/watchers/newsWatcher';
-import { newsActions } from '../redux/news/actions';
+import { watchNews } from './news/saga/news.watcher';
+import { newsActions } from './news/news.actions';
 
 export default function* rootSaga() {
   try {
-    yield all([fetchNews()]);
+    yield all([watchNews()]);
   } catch (error) {
     yield put(newsActions.catchError(error));
   }

@@ -6,6 +6,8 @@ import {
   catchError,
   clearError,
   getNewsArticle,
+  getCategory,
+  getSearchQuery,
 } from './reducer.util';
 
 const initialState = {
@@ -17,12 +19,13 @@ const initialState = {
     { name: 'sports', img: category.sports },
     { name: 'science', img: category.science },
     { name: 'entertainment', img: category.entertainment },
-    { name: 'tech', img: category.tech },
+    { name: 'technology', img: category.tech },
   ],
   selectedСategory: 'general',
   loading: false,
   error: false,
-  errorMessage: '',
+  errorMessage: {},
+  searchQuery: '',
 };
 
 export default (state = initialState, action) => {
@@ -37,6 +40,10 @@ export default (state = initialState, action) => {
       return clearError(state);
     case types.GET_NEWS_ARTICLES:
       return getNewsArticle(state, action);
+    case types.CHAGNE_CATEGORY:
+      return getCategory(state, action);
+    case types.GET_SEARCH_QUERY:
+      return getSearchQuery(state, action);
 
     default:
       return state;
