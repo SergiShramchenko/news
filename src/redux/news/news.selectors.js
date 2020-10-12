@@ -11,4 +11,5 @@ export const selectors = {
   ),
   searchQuery: createSelector([selectNews], (news) => news.searchQuery),
   loading: createSelector([selectNews], (news) => news.loading),
+  error: createSelector([selectNews], (news) => news.error),
 };

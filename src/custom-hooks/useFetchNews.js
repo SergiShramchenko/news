@@ -9,6 +9,7 @@ export default () => {
   const category = useSelector(selectors.category);
   const selectedСategory = useSelector(selectors.selectedCategory);
   const loading = useSelector(selectors.loading);
+  const error = useSelector(selectors.error);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -20,5 +21,6 @@ export default () => {
     category,
     selectedСategory,
     loading,
+    error,
   };
 };

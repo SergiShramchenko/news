@@ -1,5 +1,10 @@
-import { useMemo } from "react";
-import { useParams, useLocation, useHistory, useRouteMatch } from 'react-router-dom';
+import { useMemo } from 'react';
+import {
+  useParams,
+  useLocation,
+  useHistory,
+  useRouteMatch,
+} from 'react-router-dom';
 import queryString from 'query-string';
 
 export default () => {
@@ -13,16 +18,13 @@ export default () => {
       push: history.push,
       replace: history.replace,
       pathname: location.pathname,
-      // Merge params and parsed query string into single "query" object
-      // so that they can be used interchangeably.
-      // Example: /:topic?sort=popular -> { topic: "react", sort: "popular" }
       query: {
-        ...queryString.parse(location.search), // Convert string to object
-        ...params
+        ...queryString.parse(location.search),
+        ...params,
       },
       match,
       location,
-      history
+      history,
     };
   }, [params, match, location, history]);
-}
+};

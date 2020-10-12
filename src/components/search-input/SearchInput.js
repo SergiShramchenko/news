@@ -8,11 +8,13 @@ import './searchInput.css';
 const SearchInput = ({ getInputValue, fetchQuery, searchQuery }) => (
   <form className='search' onSubmit={fetchQuery}>
     <input
+      id='search'
       className='search__input'
       type='text'
       placeholder='search'
       onChange={getInputValue}
       value={searchQuery}
+      required
     />
     <button className='search__btn' tabIndex='0'>
       <img className='search__img' src={search} alt='search' />

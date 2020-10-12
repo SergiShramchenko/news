@@ -22,6 +22,7 @@ const NewsCategoryItem = ({
     title={category}
     tabIndex='0'
     onClick={() => changeCategory(category)}
+    onKeyPress={() => changeCategory(category)}
   />
 );
 

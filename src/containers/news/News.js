@@ -7,10 +7,13 @@ import NewsList from '../../components/news-list';
 import NewsCategory from '../../components/news-category';
 import Spinner from '../../components/spinner';
 
+import NoResult from '../../components/no-result';
+import NotFound from '../../components/not-found';
+
 import './news.css';
 
 const News = () => {
-  const { news, category, selectedСategory, loading } = useFetchNews();
+  const { news, category, selectedСategory, loading, error } = useFetchNews();
   const { changeCategory } = useNewsCategory();
 
   return (
@@ -21,7 +24,15 @@ const News = () => {
           selectedСategory={selectedСategory}
           changeCategory={changeCategory}
         />
-        {loading ? <Spinner /> : <NewsList news={news} />}
+        {loading ? (
+          <Spinner />
+        ) : !loading && !error && !news.length ? (
+          <NoResult />
+        ) : error ? (
+          <NotFound />
+        ) : (
+          <NewsList news={news} />
+        )}
       </div>
     </div>
   );

@@ -5,11 +5,12 @@
 }
 
 .logo__title {
-  margin: 10px 0px 10px 20px;
+  margin: 10px 0px 10px 15px;
   font-size: 24px;
   letter-spacing: 0.3px;
 }
 
 .logo__img {
   width: 54px;
+  height: 54px;
 }

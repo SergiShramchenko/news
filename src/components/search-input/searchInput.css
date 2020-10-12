@@ -1,9 +1,25 @@
 .search {
-  width: 50%;
+  min-width: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 800px;
+  flex: 0 1;
+  transition: 0.3s all;
+  -webkit-transition: 0.3s all;
+  -moz-transition: 0.3s all;
+  -ms-transition: 0.3s all;
+  -o-transition: 0.3s all;
+}
+
+@media screen and (max-width: 767.98px) {
+  .search {
+    min-width: 30%;
+    transition: 0.3s all;
+    -webkit-transition: 0.3s all;
+    -moz-transition: 0.3s all;
+    -ms-transition: 0.3s all;
+    -o-transition: 0.3s all;
+  }
 }
 
 .search__input {

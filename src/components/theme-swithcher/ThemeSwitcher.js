@@ -7,7 +7,12 @@ import moonLogo from '../../assets/svg/theme/moon.svg';
 import './themeSwitcher.css';
 
 const ThemeSwitcher = ({ changeThemeMode, themeMode }) => (
-  <div className='theme' onClick={changeThemeMode} tabIndex='0'>
+  <div
+    className='theme'
+    onClick={changeThemeMode}
+    onKeyPress={changeThemeMode}
+    tabIndex='0'
+  >
     <img
       className={classNames('theme__mode', { mode: themeMode })}
       src={moonLogo}

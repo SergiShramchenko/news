@@ -1,4 +1,4 @@
-import { delay, select, put } from 'redux-saga/effects';
+import { select, put } from 'redux-saga/effects';
 
 import newsApi from '../../../services';
 
@@ -10,7 +10,6 @@ function* fetchNewsArticles() {
   const searchQuery = yield select(selectors.searchQuery);
   const responce = yield newsApi.getArticles(selectedCategory, searchQuery);
   const data = yield responce.data.articles;
-  yield delay(1000);
 
   return data;
 }
