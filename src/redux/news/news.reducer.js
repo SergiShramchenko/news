@@ -30,6 +30,9 @@ export default (state = initialState, action) => {
     case types.GET_SEARCH_QUERY:
       return state.set('searchQuery', action.payload);
 
+    case types.CLEAR_SEARCH_QUERY:
+      return state.set('searchQuery', '');
+
     default:
       return state;
   }

@@ -30,4 +30,7 @@ export const newsActions = {
     type: types.GET_SEARCH_QUERY,
     payload: searchQuery,
   }),
+  clearSearchQuery: () => ({
+    type: types.CLEAR_SEARCH_QUERY,
+  }),
 };

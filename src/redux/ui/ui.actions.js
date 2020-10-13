@@ -6,4 +6,7 @@ export const uiActions = {
     type: types.GET_SEARCH_INPUT_VALUE,
     payload: searchValue,
   }),
+  clearSearchInput: () => ({
+    type: types.CLEAR_SEARCH_INPUT,
+  }),
 };
