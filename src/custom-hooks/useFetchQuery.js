@@ -1,23 +1,27 @@
 import { useDispatch, useSelector } from 'react-redux';
 
 import { newsActions } from '../redux/news/news.actions';
-import { selectors } from '../redux/news/news.selectors';
+import { uiActions } from '../redux/ui/ui.actions';
+import { uiSelectors } from '../redux/ui/ui.selectors';
 
 export default () => {
   const dispatch = useDispatch();
-  const searchQuery = useSelector(selectors.searchQuery);
+  const searchInputValue = useSelector(uiSelectors.searchInputValue);
 
   const getInputValue = (e) =>
-    dispatch(newsActions.getSearchQuery(e.target.value));
+    dispatch(uiActions.getSearchInputValue(e.target.value));
 
   const fetchQuery = (e) => {
     e.preventDefault();
-    if (searchQuery !== '') dispatch(newsActions.startSearchQuery());
+    if (searchInputValue !== '') {
+      dispatch(newsActions.getSearchQuery(searchInputValue));
+      dispatch(newsActions.startSearchQuery());
+    }
   };
 
   return {
     getInputValue,
     fetchQuery,
-    searchQuery,
+    searchInputValue,
   };
 };

@@ -9,7 +9,8 @@ export default () => {
   const category = useSelector(selectors.category);
   const selectedСategory = useSelector(selectors.selectedCategory);
   const loading = useSelector(selectors.loading);
-  const error = useSelector(selectors.error);
+  const newsError = useSelector(selectors.newsError);
+  const searchQuery = useSelector(selectors.searchQuery);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -20,7 +21,8 @@ export default () => {
     news,
     category,
     selectedСategory,
+    searchQuery,
     loading,
-    error,
+    newsError,
   };
 };

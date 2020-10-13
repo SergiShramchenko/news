@@ -5,23 +5,25 @@ import NewsCategoryItem from '../news-category-item';
 
 import './newsCategory.css';
 
-const NewsCategory = ({ category, selectedСategory, changeCategory }) => (
-  <div className='news-options'>
-    {category.map(({ img, name }) => (
-      <NewsCategoryItem
-        key={name}
-        category={name}
-        img={img}
-        selectedСategory={selectedСategory}
-        changeCategory={changeCategory}
-      />
-    ))}
-  </div>
-);
+const NewsCategory = ({ category, selectedСategory, changeCategory }) => {
+  return (
+    <div className='news-options'>
+      {category.map((item) => (
+        <NewsCategoryItem
+          key={item.get('name')}
+          category={item.get('name')}
+          img={item.get('img')}
+          selectedСategory={selectedСategory}
+          changeCategory={changeCategory}
+        />
+      ))}
+    </div>
+  );
+};
 
 NewsCategory.propTypes = {
   changeCategory: PropTypes.func.isRequired,
-  category: PropTypes.array.isRequired,
+  category: PropTypes.object.isRequired,
   selectedСategory: PropTypes.string.isRequired,
 };
 

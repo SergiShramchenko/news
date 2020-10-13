@@ -1,15 +1,18 @@
+import { fromJS } from 'immutable';
+
 import { types } from './types';
 
-const initialState = {
-  themeMode: 'day',
-};
+const initialState = fromJS({
+  themeMode: false,
+  searchInputValue: '',
+});
+
 export default (state = initialState, action) => {
   switch (action.type) {
     case types.CHANGE_THEME_MODE:
-      return {
-        ...state,
-        themeMode: state.themeMode === 'day' ? 'night' : 'day',
-      };
+      return state.set('themeMode', !state.get('themeMode'));
+    case types.GET_SEARCH_INPUT_VALUE:
+      return state.set('searchInputValue', action.payload);
 
     default:
       return state;

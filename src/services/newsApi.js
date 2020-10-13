@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const newsUrl = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=';
-const newsApiKey = 'a66a7bdb28954b278cf6b21f93b6c85a';
+const newsUrl = process.env.REACT_APP_NEWS_API_URL;
+const newsApiKey = process.env.REACT_APP_NEWS_API_KEY;
 
 export default {
   getArticles: (category, q = '') =>

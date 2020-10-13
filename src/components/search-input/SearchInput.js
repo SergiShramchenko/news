@@ -5,7 +5,7 @@ import search from '../../assets/svg/search/search.svg';
 
 import './searchInput.css';
 
-const SearchInput = ({ getInputValue, fetchQuery, searchQuery }) => (
+const SearchInput = ({ getInputValue, fetchQuery, searchInputValue }) => (
   <form className='search' onSubmit={fetchQuery}>
     <input
       id='search'
@@ -13,7 +13,7 @@ const SearchInput = ({ getInputValue, fetchQuery, searchQuery }) => (
       type='text'
       placeholder='search'
       onChange={getInputValue}
-      value={searchQuery}
+      value={searchInputValue}
       required
     />
     <button className='search__btn' tabIndex='0'>
@@ -25,7 +25,7 @@ const SearchInput = ({ getInputValue, fetchQuery, searchQuery }) => (
 SearchInput.propTypes = {
   getInputValue: PropTypes.func.isRequired,
   fetchQuery: PropTypes.func.isRequired,
-  searchQuery: PropTypes.string.isRequired,
+  searchInputValue: PropTypes.string.isRequired,
 };
 
 export default SearchInput;

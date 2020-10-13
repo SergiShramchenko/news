@@ -5,15 +5,23 @@ import useNewsCategory from '../../custom-hooks/useNewsCategory';
 
 import NewsList from '../../components/news-list';
 import NewsCategory from '../../components/news-category';
-import Spinner from '../../components/spinner';
 
-import NoResult from '../../components/no-result';
-import NotFound from '../../components/not-found';
+import WithSpinner from '../../components/with-spinner';
+import ErrorBoundary from '../../components/error-boundary';
+
+import { no_results, not_found } from '../../utils/explanation-messages';
 
 import './news.css';
 
 const News = () => {
-  const { news, category, selectedСategory, loading, error } = useFetchNews();
+  const {
+    news,
+    category,
+    selectedСategory,
+    searchQuery,
+    loading,
+    newsError,
+  } = useFetchNews();
   const { changeCategory } = useNewsCategory();
 
   return (
@@ -24,15 +32,17 @@ const News = () => {
           selectedСategory={selectedСategory}
           changeCategory={changeCategory}
         />
-        {loading ? (
-          <Spinner />
-        ) : !loading && !error && !news.length ? (
-          <NoResult />
-        ) : error ? (
-          <NotFound />
-        ) : (
-          <NewsList news={news} />
-        )}
+        <ErrorBoundary error={newsError} reason={not_found}>
+          <WithSpinner loading={loading}>
+            <NewsList
+              news={news}
+              query={searchQuery}
+              loading={loading}
+              error={newsError}
+              reason={no_results}
+            />
+          </WithSpinner>
+        </ErrorBoundary>
       </div>
     </div>
   );

@@ -12,6 +12,9 @@ export const newsActions = {
     type: types.CATCH_ERROR,
     error,
   }),
+  clearError: () => ({
+    type: types.CLEAR_ERROR,
+  }),
   getNewsArticles: (data) => ({
     type: types.GET_NEWS_ARTICLES,
     payload: data,

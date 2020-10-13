@@ -1,10 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux';
 
 import { uiActions } from '../redux/ui/ui.actions';
+import { uiSelectors } from '../redux/ui/ui.selectors';
 
 export default () => {
-  const theme = useSelector((state) => state.ui.themeMode);
+  const themeMode = useSelector(uiSelectors.themeMode);
   const dispatch = useDispatch();
+
   const changeThemeMode = (event) => {
     if (
       event.type === 'click' ||
@@ -12,9 +14,6 @@ export default () => {
     )
       dispatch(uiActions.changeThemeMode());
   };
-
-  const nightMode = 'night';
-  const themeMode = theme === nightMode;
 
   return { changeThemeMode, themeMode };
 };

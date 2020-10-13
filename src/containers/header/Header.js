@@ -11,7 +11,7 @@ import './header.css';
 
 export default () => {
   const { changeThemeMode, themeMode } = useThemeMode();
-  const { getInputValue, fetchQuery, searchQuery } = useFetchQuery();
+  const { getInputValue, fetchQuery, searchInputValue } = useFetchQuery();
 
   return (
     <header className='header'>
@@ -20,7 +20,7 @@ export default () => {
         <SearchInput
           getInputValue={getInputValue}
           fetchQuery={fetchQuery}
-          searchQuery={searchQuery}
+          searchInputValue={searchInputValue}
         />
         <ThemeSwitcher
           changeThemeMode={changeThemeMode}

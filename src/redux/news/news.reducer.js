@@ -1,49 +1,34 @@
+import { fromJS, Map } from 'immutable';
+
 import { types } from './types';
 import { category } from '../../utils/category.js';
-import {
-  startFetchNews,
-  stopFetchNews,
-  catchError,
-  clearError,
-  getNewsArticle,
-  getCategory,
-  getSearchQuery,
-} from './reducer.util';
 
-const initialState = {
+const initialState = fromJS({
   data: [],
-  category: [
-    { name: 'general', img: category.genearal },
-    { name: 'health', img: category.health },
-    { name: 'business', img: category.business },
-    { name: 'sports', img: category.sports },
-    { name: 'science', img: category.science },
-    { name: 'entertainment', img: category.entertainment },
-    { name: 'technology', img: category.tech },
-  ],
+  category,
   selectedСategory: 'general',
+  searchQuery: '',
   loading: false,
   error: false,
   errorMessage: {},
-  searchQuery: '',
-};
+});
 
 export default (state = initialState, action) => {
   switch (action.type) {
     case types.START_FETCH_NEWS:
-      return startFetchNews(state);
+      return state.set('loading', true);
     case types.STOP_FETCH_NEWS:
-      return stopFetchNews(state);
-    case types.CATCH_ERROR:
-      return catchError(state, action);
-    case types.CLEAR_ERROR:
-      return clearError(state);
+      return state.set('loading', false);
     case types.GET_NEWS_ARTICLES:
-      return getNewsArticle(state, action);
+      return state.set('data', action.payload);
+    case types.CATCH_ERROR:
+      return state.set('error', true).set('errorMessage', action.error);
+    case types.CLEAR_ERROR:
+      return state.set('error', false).set('errorMessage', Map());
     case types.CHAGNE_CATEGORY:
-      return getCategory(state, action);
+      return state.set('selectedСategory', action.payload);
     case types.GET_SEARCH_QUERY:
-      return getSearchQuery(state, action);
+      return state.set('searchQuery', action.payload);
 
     default:
       return state;
