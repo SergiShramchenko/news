@@ -1,7 +1,7 @@
 import { fromJS, Map } from 'immutable';
 
 import { types } from './types';
-import { category } from '../../utils/category.js';
+import { category } from '../../utils/storage';
 
 const initialState = fromJS({
   data: [],
@@ -29,7 +29,6 @@ export default (state = initialState, action) => {
       return state.set('selectedСategory', action.payload);
     case types.GET_SEARCH_QUERY:
       return state.set('searchQuery', action.payload);
-
     case types.CLEAR_SEARCH_QUERY:
       return state.set('searchQuery', '');
 

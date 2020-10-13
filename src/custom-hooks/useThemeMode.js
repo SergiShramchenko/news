@@ -1,3 +1,4 @@
+import store from 'store';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { uiActions } from '../redux/ui/ui.actions';
@@ -10,7 +11,10 @@ export default () => {
   const dispatch = useDispatch();
 
   const changeThemeMode = (e) => {
-    if (handleClickAndEnter(e)) dispatch(uiActions.changeThemeMode());
+    if (handleClickAndEnter(e)) {
+      dispatch(uiActions.changeThemeMode());
+      store.set('themeMode', !themeMode);
+    }
   };
 
   return { changeThemeMode, themeMode };

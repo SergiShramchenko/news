@@ -12,8 +12,9 @@ function* fetchNewsArticles() {
   const selectedCategory = yield select(selectors.selectedCategory);
   const searchQuery = yield select(selectors.searchQuery);
   const newsError = yield select(selectors.newsError);
-  const responce = yield newsApi.getArticles(selectedCategory, searchQuery);
-  const data = yield responce.data.articles;
+
+  const response = yield newsApi.getArticles(selectedCategory, searchQuery);
+  const data = yield response.data.articles;
 
   if (data && newsError) yield handlePrevError();
 

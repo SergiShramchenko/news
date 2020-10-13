@@ -1,9 +1,10 @@
 import { fromJS } from 'immutable';
 
 import { types } from './types';
+import { themeMode } from '../../utils/storage';
 
 const initialState = fromJS({
-  themeMode: false,
+  themeMode,
   searchInputValue: '',
 });
 
