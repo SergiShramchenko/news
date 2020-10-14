@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './newsItem.css';
+import './newsItem.scss';
 
 const NewsItem = ({ url, title }) => (
   <li className='news-item'>

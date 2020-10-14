@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 import moonLogo from '../../assets/svg/theme/moon.svg';
 
-import './themeSwitcher.css';
+import './themeSwitcher.scss';
 
 const ThemeSwitcher = ({ changeThemeMode, themeMode }) => (
   <div

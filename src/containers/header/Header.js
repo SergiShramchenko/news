@@ -7,7 +7,7 @@ import Logotype from '../../components/logotype';
 import SearchInput from '../../components/search-input';
 import ThemeSwitcher from '../../components/theme-swithcher';
 
-import './header.css';
+import './header.scss';
 
 export default () => {
   const { changeThemeMode, themeMode } = useThemeMode();

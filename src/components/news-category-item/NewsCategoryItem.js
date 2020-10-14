@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 import activeClass from '../../utils/activeClass';
 
-import './newsCategoryItem.css';
+import './newsCategoryItem.scss';
 
 const NewsCategoryItem = ({
   changeCategory,

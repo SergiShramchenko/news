@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import NewsItem from '../news-item';
 import ExplanationMessage from '../../components/explanation-message';
 
-import './newsList.css';
+import './newsList.scss';
 
 const NewsList = ({ news, query, loading, error, reason }) =>
   !loading && !error && query && !news.size ? (

@@ -11,7 +11,7 @@ import ErrorBoundary from '../../components/error-boundary';
 
 import { no_results, not_found } from '../../utils/explanation-messages';
 
-import './news.css';
+import './news.scss';
 
 const News = () => {
   const {

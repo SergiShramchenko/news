@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import search from '../../assets/svg/search/search.svg';
 import clearInput from '../../assets/svg/search/delete.svg';
 
-import './searchInput.css';
+import './searchInput.scss';
 
 const SearchInput = ({
   getInputValue,

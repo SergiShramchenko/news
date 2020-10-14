@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import NewsCategoryItem from '../news-category-item';
 
-import './newsCategory.css';
+import './newsCategory.scss';
 
 const NewsCategory = ({ category, selectedСategory, changeCategory }) => {
   return (

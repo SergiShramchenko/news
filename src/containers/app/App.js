@@ -3,7 +3,7 @@ import React from 'react';
 import Header from '../header';
 import News from '../news';
 
-import './App.css';
+import './App.scss';
 
 function App() {
   return (

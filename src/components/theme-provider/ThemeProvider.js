@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 import useThemeMode from '../../custom-hooks/useThemeMode';
 
-import './themeProvider.css';
+import './themeProvider.scss';
 
 export default ({ children }) => {
   const { themeMode } = useThemeMode();

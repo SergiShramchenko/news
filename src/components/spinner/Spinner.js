@@ -2,7 +2,7 @@ import React from 'react';
 
 import spinner from '../../assets/svg/spinner/spinner.svg';
 
-import './spinner.css';
+import './spinner.scss';
 
 export default () => (
   <div className='spinner'>

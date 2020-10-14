@@ -2,7 +2,7 @@ import React from 'react';
 
 import newsLogo from '../../assets/svg/logo/news.svg';
 
-import './logotype.css';
+import './logotype.scss';
 
 export default () => (
   <div className='logo' tabIndex='0'>

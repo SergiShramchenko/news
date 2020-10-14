@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './explanationMessage.css';
+import './explanationMessage.scss';
 
 export default ({ message, img }) => (
   <div className='exp'>
