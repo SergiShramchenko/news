@@ -12,18 +12,18 @@ const NewsList = ({ news, query, loading, error, reason }) =>
   ) : (
     <ul className='news-list'>
       {news &&
-        news.map((item) => (
-          <NewsItem
-            key={item.get('url')}
-            url={item.get('url')}
-            title={item.get('title')}
-          />
+        news.map((item, idx) => (
+          <NewsItem key={idx} url={item.get('url')} title={item.get('title')} />
         ))}
     </ul>
   );
 
 NewsList.propTypes = {
   news: PropTypes.object.isRequired,
+  query: PropTypes.string.isRequired,
+  loading: PropTypes.bool.isRequired,
+  error: PropTypes.bool.isRequired,
+  reason: PropTypes.object.isRequired,
 };
 
 export default NewsList;

@@ -1,0 +1,9 @@
+@mixin defaultCategoryImgSize {
+  width: 36px;
+  height: 36px;
+}
+
+@mixin activeCategoryImgSize {
+  width: 72px;
+  height: 72px;
+}

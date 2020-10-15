@@ -21,18 +21,13 @@ export default () => {
   return (
     <header className='header'>
       <Logotype />
-      <div className='header-options'>
-        <SearchInput
-          getInputValue={getInputValue}
-          fetchQuery={fetchQuery}
-          clearSearchInputAndQuery={clearSearchInputAndQuery}
-          searchInputValue={searchInputValue}
-        />
-        <ThemeSwitcher
-          changeThemeMode={changeThemeMode}
-          themeMode={themeMode}
-        />
-      </div>
+      <SearchInput
+        getInputValue={getInputValue}
+        fetchQuery={fetchQuery}
+        clearSearchInputAndQuery={clearSearchInputAndQuery}
+        searchInputValue={searchInputValue}
+      />
+      <ThemeSwitcher changeThemeMode={changeThemeMode} themeMode={themeMode} />
     </header>
   );
 };

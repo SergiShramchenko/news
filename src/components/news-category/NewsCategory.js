@@ -7,7 +7,7 @@ import './newsCategory.scss';
 
 const NewsCategory = ({ category, selectedСategory, changeCategory }) => {
   return (
-    <div className='news-options'>
+    <div className='news-category'>
       {category.map((item) => (
         <NewsCategoryItem
           key={item.get('name')}

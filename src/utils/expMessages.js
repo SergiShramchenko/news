@@ -1,5 +1,5 @@
-import robot from '../assets/svg/not-found/robot.svg';
-import alien from '../assets/svg/no-results/alien.svg';
+import robot from '../assets/svg/exp-message/robot.svg';
+import alien from '../assets/svg/exp-message/alien.svg';
 
 export const no_results = {
   message: {

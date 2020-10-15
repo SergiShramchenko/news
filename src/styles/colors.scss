@@ -1,12 +1,18 @@
-$text-color-black: #000;
+$theme-mode-day: #fbfbfb;
+$theme-mode-night: #1b1b1c;
+
+$text-color-black: #040404;
 $text-color-white: #dcdedf;
 
-$background-white: white;
-$background-black: #1b1b1c;
+$logo-title-day: #000;
+$logo-title-night: rgb(220, 222, 223);
 
-$input-background: #dad6d6;
-$input-background-focus: #e6e4e4;
+$search-input: #dad6d6;
+$search-input-focus: #e6e4e4;
 
-$logo-title-color: black;
+$item-link: #040404;
+$item-link-theme-day: #1a1dcc;
+$item-link-theme-night: #5b97f1;
 
-$button-color: #dad6d6;
+$btn: rgb(218, 214, 214);
+$btn-active: #dad6d6;

@@ -1,6 +1,10 @@
-.news-options {
-  width: 50%;
+@import 'styles/positions.scss';
+
+.news-category {
+  width: 100%;
+  max-width: 660px;
   height: 72px;
-  display: flex;
-  justify-content: center;
+  margin-bottom: 10px;
+  @include flexRowItemCenter;
+  justify-content: space-evenly;
 }

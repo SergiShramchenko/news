@@ -1,0 +1,31 @@
+@mixin transitionDuration($time, $prop) {
+  transition: $time $prop;
+  -webkit-transition: $time $prop;
+  -moz-transition: $time $prop;
+  -ms-transition: $time $prop;
+  -o-transition: $time $prop;
+}
+
+@mixin transformScale($scale) {
+  transform: scale($scale);
+  -webkit-transform: scale($scale);
+  -moz-transform: scale($scale);
+  -ms-transform: scale($scale);
+  -o-transform: scale($scale);
+}
+
+@mixin transformRotate($deg) {
+  transform: rotate($deg);
+  -webkit-transform: rotate($deg);
+  -moz-transform: rotate($deg);
+  -ms-transform: rotate($deg);
+  -o-transform: rotate($deg);
+}
+
+@mixin borderRadius($size) {
+  border-radius: $size;
+  -webkit-border-radius: $size;
+  -moz-border-radius: $size;
+  -ms-border-radius: $size;
+  -o-border-radius: $size;
+}

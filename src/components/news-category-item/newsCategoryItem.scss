@@ -1,76 +1,43 @@
-.news-options__img {
-  width: 36px;
+@import 'styles/utils.scss';
+@import 'styles/images.scss';
+
+.news-category__img {
   margin-left: 25px;
-  transition: 0.3s all;
-  -webkit-transition: 0.3s all;
-  -moz-transition: 0.3s all;
-  -ms-transition: 0.3s all;
-  -o-transition: 0.3s all;
-}
+  @include defaultCategoryImgSize;
+  @include transitionDuration($time: 0.3s, $prop: all);
 
-@media screen and (max-width: 767.98px) {
-  .news-options__img {
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:active {
+    outline: none;
+  }
+
+  &:hover {
+    cursor: pointer;
+    @include transitionDuration($time: 0.3s, $prop: all);
+    @include transformScale(1.6);
+  }
+
+  @media screen and (max-width: 767.98px) {
     width: 28px;
-    transition: 0.3s all;
-    -webkit-transition: 0.3s all;
-    -moz-transition: 0.3s all;
-    -ms-transition: 0.3s all;
-    -o-transition: 0.3s all;
+    @include transitionDuration($time: 0.3s, $prop: all);
   }
-}
 
-.news-options__img:first-child {
-  margin-left: 0;
-}
+  &_active {
+    outline: none;
+    @include activeCategoryImgSize;
+    @include transitionDuration($time: 0.2s, $prop: all);
 
-.news-options__img:active {
-  outline: none;
-}
+    &:hover {
+      @include transformScale(1.05);
+      @include transitionDuration($time: 0.2s, $prop: all);
+    }
 
-.news-options__img:hover {
-  cursor: pointer;
-  transform: scale(1.6);
-  transition: 0.3s all;
-  -webkit-transition: 0.3s all;
-  -moz-transition: 0.3s all;
-  -ms-transition: 0.3s all;
-  -o-transition: 0.3s all;
-  -webkit-transform: scale(1.6);
-  -moz-transform: scale(1.6);
-  -ms-transform: scale(1.6);
-  -o-transform: scale(1.6);
-}
-
-.active {
-  width: 72px;
-  outline: none;
-  transition: 0.2s all;
-  -webkit-transition: 0.2s all;
-  -moz-transition: 0.2s all;
-  -ms-transition: 0.2s all;
-  -o-transition: 0.2s all;
-}
-
-@media screen and (max-width: 767.98px) {
-  .active {
-    width: 54px;
-    transition: 0.3s all;
-    -webkit-transition: 0.3s all;
-    -moz-transition: 0.3s all;
-    -ms-transition: 0.3s all;
-    -o-transition: 0.3s all;
+    @media screen and (max-width: 767.98px) {
+      width: 54px;
+      @include transitionDuration($time: 0.3s, $prop: all);
+    }
   }
-}
-
-.active:hover {
-  transform: none;
-  -webkit-transform: none;
-  -moz-transform: none;
-  -ms-transform: none;
-  -o-transform: none;
-  transition: 0.2s all;
-  -webkit-transition: 0.2s all;
-  -moz-transition: 0.2s all;
-  -ms-transition: 0.2s all;
-  -o-transition: 0.2s all;
 }

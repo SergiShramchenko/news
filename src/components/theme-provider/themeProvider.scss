@@ -1,22 +1,21 @@
+@import 'styles/colors.scss';
+@import 'styles/utils.scss';
+
 .theme-provider {
-  background-color: white;
-  transition: 0.5s all;
-  -webkit-transition: 0.5s all;
-  -moz-transition: 0.5s all;
-  -ms-transition: 0.5s all;
-  -o-transition: 0.5s all;
-}
+  background-color: $theme-mode-day;
+  @include transitionDuration($time: 0.5s, $prop: all);
 
-.theme-provider__mode {
-  background-color: rgb(27, 27, 28);
-  color: rgb(230, 232, 232);
-  transition: 0.5s all;
-  -webkit-transition: 0.5s all;
-  -moz-transition: 0.5s all;
-  -ms-transition: 0.5s all;
-  -o-transition: 0.5s all;
-}
+  &__mode {
+    background-color: $theme-mode-night;
+    color: $logo-title-night;
+    @include transitionDuration($time: 0.5s, $prop: all);
 
-.theme-provider__mode a {
-  color: rgb(220, 222, 223);
+    a {
+      color: $text-color-white;
+
+      &:hover {
+        color: $item-link-theme-night;
+      }
+    }
+  }
 }

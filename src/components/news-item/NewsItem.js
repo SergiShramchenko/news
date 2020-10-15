@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import './newsItem.scss';
 
 const NewsItem = ({ url, title }) => (
-  <li className='news-item'>
+  <li className='news-list__item'>
     <a
-      className='news-item__link'
+      className='news-list__item__link'
       rel='noopener noreferrer'
       href={url}
       target='_blank'

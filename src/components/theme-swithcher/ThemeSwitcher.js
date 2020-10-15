@@ -7,17 +7,15 @@ import moonLogo from '../../assets/svg/theme/moon.svg';
 import './themeSwitcher.scss';
 
 const ThemeSwitcher = ({ changeThemeMode, themeMode }) => (
-  <div
-    className='theme'
-    onClick={changeThemeMode}
-    onKeyPress={changeThemeMode}
-    tabIndex='0'
-  >
+  <div className='theme'>
     <img
-      className={classNames('theme__mode', { mode: themeMode })}
+      className={classNames('theme__mode', { theme__mode_active: themeMode })}
       src={moonLogo}
       alt='moon'
       title='color theme'
+      tabIndex='0'
+      onClick={changeThemeMode}
+      onKeyPress={changeThemeMode}
     />
   </div>
 );

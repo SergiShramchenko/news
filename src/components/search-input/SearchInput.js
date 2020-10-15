@@ -23,20 +23,32 @@ const SearchInput = ({
         value={searchInputValue}
         required
       />
-      <button className='search-input__btn' tabIndex='0'>
-        <img className='search-input__img' src={search} alt='search' />
+      <button className='search__btn' tabIndex='0'>
+        <img
+          className='search__img'
+          src={search}
+          alt='search'
+          style={{
+            width: '18px',
+            height: '18px',
+          }}
+        />
       </button>
       <button
-        className='search-input__btn clear-input'
+        className='search__btn search__btn_clear-input'
         tabIndex='0'
         type='button'
         onClick={clearSearchInputAndQuery}
         onKeyPress={clearSearchInputAndQuery}
       >
         <img
-          className='search-input__img clear'
+          className='search__img  search__img_clear'
           src={clearInput}
           alt='search'
+          style={{
+            width: '18px',
+            height: '18px',
+          }}
         />
       </button>
     </form>

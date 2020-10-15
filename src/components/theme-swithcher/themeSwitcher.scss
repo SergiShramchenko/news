@@ -1,31 +1,20 @@
-/* THEME MODE */
+@import 'styles/utils.scss';
+
 .theme {
-  position: absolute;
-  right: 0;
-}
+  width: 150px;
+  display: flex;
+  justify-content: flex-end;
+  margin-left: 10px;
 
-.theme__mode {
-  width: 50px;
-  cursor: pointer;
-  transition: 0.5s all;
-  -webkit-transition: 0.5s all;
-  -moz-transition: 0.5s all;
-  -ms-transition: 0.5s all;
-  -o-transition: 0.5s all;
-}
+  &__mode {
+    width: 50px;
+    cursor: pointer;
+    @include transitionDuration($time: 0.5s, $prop: all);
 
-.mode {
-  filter: invert(1);
-  transform: rotate(180deg);
-  -webkit-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
-  transition: 0.5s all;
-  -webkit-transition: 0.5s all;
-  -moz-transition: 0.5s all;
-  -ms-transition: 0.5s all;
-  -o-transition: 0.5s all;
+    &_active {
+      filter: invert(1);
+      @include transformRotate(180deg);
+      @include transitionDuration($time: 0.5s, $prop: all);
+    }
+  }
 }
-
-/* // THEME MODE // */

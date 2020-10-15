@@ -11,20 +11,22 @@ const NewsCategoryItem = ({
   category,
   img,
   selectedСategory,
-}) => (
-  <img
-    className={classNames('news-options__img', {
-      active: activeClass(category, selectedСategory),
-    })}
-    key={category}
-    src={img}
-    alt={category}
-    title={category}
-    tabIndex='0'
-    onClick={() => changeCategory(category)}
-    onKeyPress={() => changeCategory(category)}
-  />
-);
+}) => {
+  return (
+    <img
+      className={classNames('news-category__img', {
+        'news-category__img_active': activeClass(category, selectedСategory),
+      })}
+      key={category}
+      src={img}
+      alt={category}
+      title={category}
+      tabIndex='0'
+      onClick={() => changeCategory(category)}
+      onKeyPress={() => changeCategory(category)}
+    />
+  );
+};
 
 NewsCategoryItem.propTypes = {
   changeCategory: PropTypes.func.isRequired,
