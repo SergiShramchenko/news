@@ -1,10 +1,14 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
+import useNewsCategory from './useNewsCategory';
+
 import { selectors } from '../redux/news/news.selectors';
 import { newsActions } from '../redux/news/news.actions';
 
 export default () => {
+  const { changeCategory } = useNewsCategory();
+
   const news = useSelector(selectors.articles);
   const category = useSelector(selectors.category);
   const selectedСategory = useSelector(selectors.selectedCategory);
@@ -24,5 +28,6 @@ export default () => {
     searchQuery,
     loading,
     newsError,
+    changeCategory,
   };
 };

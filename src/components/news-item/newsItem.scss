@@ -3,6 +3,7 @@
 @import 'styles/utils.scss';
 
 .news-list__item {
+  font-size: $default-text-size;
   margin: 20px 5px;
 
   &__link {

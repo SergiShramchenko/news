@@ -33,4 +33,25 @@ export const newsActions = {
   clearSearchQuery: () => ({
     type: types.CLEAR_SEARCH_QUERY,
   }),
+
+  // INFINITE SCROLL WORKING IN PROCESS...
+  getMoreNews: () => ({
+    type: types.GET_MORE_NEWS,
+  }),
+  changePageSize: (pageSize) => ({
+    type: types.CHANGE_PAGE_SIZE,
+    payload: pageSize,
+  }),
+  startFetchMoreNews: () => ({
+    type: types.START_FETCH_MORE_NEWS,
+  }),
+  stopFetchMoreNews: () => ({
+    type: types.STOP_FETCH_MORE_NEWS,
+  }),
+  setDefaultPageSize: () => ({
+    type: types.SET_DEFAULT_PAGE_SIZE,
+  }),
+  stopLoadMoreNews: () => ({
+    type: types.STOP_LOAD_MORE_NEWS,
+  }),
 };

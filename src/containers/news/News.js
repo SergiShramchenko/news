@@ -1,7 +1,6 @@
 import React from 'react';
 
 import useFetchNews from '../../custom-hooks/useFetchNews';
-import useNewsCategory from '../../custom-hooks/useNewsCategory';
 
 import NewsList from '../../components/news-list';
 import NewsCategory from '../../components/news-category';
@@ -21,8 +20,9 @@ const News = () => {
     searchQuery,
     loading,
     newsError,
+    changeCategory,
   } = useFetchNews();
-  const { changeCategory } = useNewsCategory();
+  console.log(loading);
 
   return (
     <main className='main'>

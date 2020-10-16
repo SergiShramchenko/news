@@ -11,4 +11,8 @@ export const selectors = {
   searchQuery: createSelector(selectNews, (news) => news.get('searchQuery')),
   loading: createSelector(selectNews, (news) => news.get('loading')),
   newsError: createSelector(selectNews, (news) => news.get('error')),
+
+  // INFINITE SCROLL WORKING IN PROCESS...
+  pageSize: createSelector(selectNews, (news) => news.get('pageSize')),
+  loadMoreNews: createSelector(selectNews, (news) => news.get('loadMoreNews')),
 };
