@@ -22,7 +22,6 @@ const News = () => {
     newsError,
     changeCategory,
   } = useFetchNews();
-  console.log(loading);
 
   return (
     <main className='main'>

@@ -1,5 +1,5 @@
-import { select, put, delay } from 'redux-saga/effects';
 import { fromJS } from 'immutable';
+import { select, put } from 'redux-saga/effects';
 
 import newsApi from '../../../services';
 
@@ -7,8 +7,6 @@ import { newsActions } from '../news.actions';
 import { selectors } from '../news.selectors';
 
 function* fetchNewsArticles() {
-  yield delay(1000);
-
   const selectedCategory = yield select(selectors.selectedCategory);
   const searchQuery = yield select(selectors.searchQuery);
   const pageSize = yield select(selectors.pageSize);

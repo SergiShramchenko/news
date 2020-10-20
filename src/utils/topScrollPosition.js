@@ -1,5 +1,3 @@
-import { selectors } from '../redux/news/news.selectors';
-
 export default (selector) =>
   Math.abs(
     document.querySelector(selector).scrollHeight -

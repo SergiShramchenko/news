@@ -2,6 +2,10 @@ import { types } from './types';
 
 export const newsActions = {
   init: () => ({ type: types.INIT }),
+  init_category: () => ({ type: types.INIT_CATEGORY }),
+  init_search: () => ({ type: types.INIT_SEARCH }),
+  init_default: () => ({ type: types.INIT_DEFAULT }),
+
   startFetchNews: () => ({
     type: types.START_FETCH_NEWS,
   }),
@@ -22,9 +26,6 @@ export const newsActions = {
   getNewCategory: (category) => ({
     type: types.CHAGNE_CATEGORY,
     payload: category,
-  }),
-  startSearchQuery: () => ({
-    type: types.START_SEARCH_QUERY,
   }),
   getSearchQuery: (searchQuery) => ({
     type: types.GET_SEARCH_QUERY,
@@ -50,8 +51,5 @@ export const newsActions = {
   }),
   setDefaultPageSize: () => ({
     type: types.SET_DEFAULT_PAGE_SIZE,
-  }),
-  stopLoadMoreNews: () => ({
-    type: types.STOP_LOAD_MORE_NEWS,
   }),
 };

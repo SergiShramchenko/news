@@ -20,8 +20,8 @@ export default () => {
     e.preventDefault();
     if (searchInputValue !== '') {
       dispatch(newsActions.getSearchQuery(searchInputValue));
+      dispatch(newsActions.init_search());
     }
-    dispatch(newsActions.startSearchQuery());
   };
 
   const clearSearchInputAndQuery = (e) => {
@@ -29,6 +29,7 @@ export default () => {
       if (searchInputQuery) {
         dispatch(uiActions.clearSearchInput());
         dispatch(newsActions.clearSearchQuery());
+        dispatch(newsActions.init_default());
       } else if (!searchInputQuery && searchInputValue) {
         dispatch(uiActions.clearSearchInput());
       }

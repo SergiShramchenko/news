@@ -15,26 +15,26 @@ import topScrollPosition from '../utils/topScrollPosition';
 
 export default () => {
   const pageSize = useSelector(selectors.pageSize);
-  const loadMoreNews = useSelector(selectors.loadMoreNews);
+  const getMoreNews = useSelector(selectors.getMoreNews);
   const dispatch = useDispatch();
 
   const handleScroll = debounce(() => {
-    if (topScrollPosition('.App') >= SCROLL_TOP_DISTANCE) {
-      return false;
-    } else {
-      dispatch(newsActions.getMoreNews());
-    }
-  }, 150);
+    if (topScrollPosition('.App') >= SCROLL_TOP_DISTANCE) return false;
+
+    dispatch(newsActions.getMoreNews());
+  }, 0);
 
   useEffect(() => {
-    if (!loadMoreNews) return;
-    else if (pageSize + NEWS_ITEM_INCREMENT >= MAX_NEWS_ITEMS)
+    if (!getMoreNews) return;
+
+    if (pageSize + NEWS_ITEM_INCREMENT >= MAX_NEWS_ITEMS) {
       dispatch(newsActions.changePageSize(MAX_NEWS_ITEMS));
-    else {
+    } else {
       const newPageSize = pageSize + NEWS_ITEM_INCREMENT;
       dispatch(newsActions.changePageSize(newPageSize));
     }
-  }, [loadMoreNews, dispatch]);
+    return;
+  }, [getMoreNews]);
 
   useEffect(() => {
     document.querySelector('.App').addEventListener('scroll', handleScroll);

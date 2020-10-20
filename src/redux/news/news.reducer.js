@@ -13,6 +13,8 @@ const initialState = fromJS({
   errorMessage: {},
   pageSize: 20,
   loadMoreNews: false,
+  changePageSize: false,
+  getMoreNews: false,
 });
 
 export default (state = initialState, action) => {
@@ -20,7 +22,7 @@ export default (state = initialState, action) => {
     case types.START_FETCH_NEWS:
       return state.set('loading', true);
     case types.STOP_FETCH_NEWS:
-      return state.set('loading', false).set('loadMore', false);
+      return state.set('loading', false);
     case types.GET_NEWS_ARTICLES:
       return state.set('data', action.payload);
     case types.CATCH_ERROR:
@@ -35,14 +37,16 @@ export default (state = initialState, action) => {
       return state.set('searchQuery', '');
 
     // INFINITE SCROLL WORKING IN PROCESS...
+    case types.GET_MORE_NEWS:
+      return state.set('getMoreNews', true);
     case types.CHANGE_PAGE_SIZE:
-      return state.set('pageSize', action.payload);
+      return state.set('pageSize', action.payload).set('getMoreNews', false);
+    case types.SET_DEFAULT_PAGE_SIZE:
+      return state.set('pageSize', 20);
     case types.START_FETCH_MORE_NEWS:
       return state.set('loadMoreNews', true);
     case types.STOP_FETCH_MORE_NEWS:
       return state.set('loadMoreNews', false);
-    case types.SET_DEFAULT_PAGE_SIZE:
-      return state.set('pageSize', 20);
 
     default:
       return state;

@@ -2,11 +2,13 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import useNewsCategory from './useNewsCategory';
+import useInfiniteScroll from './useInfiniteScroll';
 
 import { selectors } from '../redux/news/news.selectors';
 import { newsActions } from '../redux/news/news.actions';
 
 export default () => {
+  useInfiniteScroll();
   const { changeCategory } = useNewsCategory();
 
   const news = useSelector(selectors.articles);

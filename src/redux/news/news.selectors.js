@@ -15,4 +15,5 @@ export const selectors = {
   // INFINITE SCROLL WORKING IN PROCESS...
   pageSize: createSelector(selectNews, (news) => news.get('pageSize')),
   loadMoreNews: createSelector(selectNews, (news) => news.get('loadMoreNews')),
+  getMoreNews: createSelector(selectNews, (news) => news.get('getMoreNews')),
 };
